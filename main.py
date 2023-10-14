@@ -14,6 +14,8 @@ model.fit(X, y)
 def predict():
     measurements = request.json['measurements']
     prediction = model.predict([measurements])
+    # Deliberate style violation - long line
+    very_long_variable_name_to_trigger_a_style_violation = "This line is deliberately longer than 79 characters to trigger a PEP 8 style violation."
     return jsonify({'species': data.target_names[prediction[0]]})
 
 if __name__ == '__main__':
